@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('bio').textContent = data.bio;
             document.getElementById('location').textContent = data.location;
             document.getElementById('joined').textContent = `Joined ${new Date(data.created_at).toLocaleDateString()}`;
-            document.getElementById('linkedin').href = `https://www.linkedin.com/in/${data.blog.split('linkedin.com/in/')[1]}`;
+            document.getElementById('linkedin').href = `https://www.linkedin.com/in/arthurcarvalh0/`;
         })
         .catch(error => console.error('Error fetching GitHub user data:', error));
 
