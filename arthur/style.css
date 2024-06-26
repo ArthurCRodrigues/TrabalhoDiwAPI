@@ -1,144 +1,177 @@
 body {
-    background-color: #0d1117 !important;
-    color: #c9d1d9 !important;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column;
-}
-
-.containerr {
-    display: flex;
-    width: 80%;
-    background-color: #161b22;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    background-color: #f0f0f0;
     overflow: hidden;
 }
 
-.left-side, .right-side {
-    padding: 20px;
-}
-
-.left-side {
-    background-color: #1c2026;
-    text-align: center;
-    flex: 1;
-}
-
-.left-side img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-    border: 3px solid #c9d1d9;
-}
-
-.left-side h1, .left-side h2 {
-    margin: 0;
-}
-
-.left-side button {
-    background-color: #21262d;
-    color: #c9d1d9;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.left-side button:hover {
-    background-color: #30363d;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.info p, .info a {
-    margin: 5px 0;
-}
-
-.info a {
-    text-decoration: none;
-    color: #c9d1d9;
-    padding: 5px 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#name {
-    margin-bottom: 0.5vh;
-}
-
-#username {
-    font-size: 14px;
-    font-style: italic;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.linkedin-icon {
-    width: 10px;
-    height: 32px;
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
-
-#connect-text {
-    padding: 0;
-    margin: 0;
-}
-
-.right-side {
-    flex: 2;
-}
-
-.repositories h3 {
-    margin-bottom: 20px;
-}
-
-#repo-list {
+.container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2vh; /* Adjust gap between items as needed */
 }
 
-.repository {
-    background-color: #21262d;
-    padding: 20px;
-    border-radius: 5px;
+.grid-item {
+    width: 90vh; /* Fixed width */
+    height: 45vh; /* Fixed height */
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 20px;
+    position: relative;
+    padding: 10px;
+    overflow: hidden; /* Ensure content does not overflow */
+    box-sizing: border-box;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.carousel-images {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 33.333%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+#github-info {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.github-main-info {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.github-main-info img {
+    border-radius: 50%;
+    width: 100px; /* Fixed size */
+    height: 100px; /* Fixed size */
+    object-fit: cover;
+}
+
+.github-main-info h2 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.github-main-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.github-info-footer {
+    display: flex;
     justify-content: space-between;
+    overflow: hidden;
 }
 
+.github-additional-info, .github-linkedin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
 
-.repository h4 {
+.github-linkedin a {
+    color: #0e76a8;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#github-repos {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#github-repos h2 {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.repos-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 10px;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    padding-right: 5px; /* Add some padding to avoid content being hidden by scrollbar */
+}
+
+.repo-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.repo-item h3 {
     margin: 0;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.repository p {
-    margin: 5px 0 0 0;
-    color: #8b949e;
+.repo-item p {
+    margin: 5px 0;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.repo-language {
-    color: #8b949e;
-    align-self: flex-end;
-}
-
-.slid {
-    display: inline-block !important
+.repo-item .language {
+    font-weight: bold;
+    font-size: 12px;
 }
